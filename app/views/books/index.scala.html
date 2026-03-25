@@ -1,0 +1,17 @@
+@(books: Set[model.Book])
+<html>
+    <head><title>All Books</title></head>
+    <body>
+        <h1>All Books</h1>
+        <a href="@routes.BooksController.create()">+ Add Book</a>
+        @for(book <- books){
+            <div>
+                <a href="@routes.BooksController.show(book.id)">@book.title</a>
+                <p>Author: @book.author</p>
+                <p>Price: @book.price</p>
+                <a href="@routes.BooksController.edit(book.id)">Edit</a> |
+                <a href="@routes.BooksController.destroy(book.id)">Delete</a>
+            </div>
+        }
+    </body>
+</html>

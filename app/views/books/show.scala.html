@@ -1,0 +1,11 @@
+@(book: model.Book)
+<html>
+    <head><title>@book.title</title></head>
+    <body>
+        <h1>@book.title</h1>
+        <p>Author: @book.author</p>
+        <p>Price: @book.price</p>
+        <a href="@routes.BooksController.edit(book.id)">Edit</a> |
+        <a href="@routes.BooksController.index()">Back</a>
+    </body>
+</html>

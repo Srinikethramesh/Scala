@@ -1,0 +1,18 @@
+@(bookForm : Form[model.Book])(implicit messages: play.i18n.Messages, request: play.mvc.Http.Request)
+@import helper._
+<html>
+    <head>
+        <title>Create Books</title>
+    </head>
+    <body>
+        <h1>Create Books</h1>
+        @helper.form(action = routes.BooksController.save()) {
+            @CSRF.formField
+            @helper.inputText(bookForm("title"))
+            @helper.inputText(bookForm("author"))
+            @helper.inputText(bookForm("id"))
+            @helper.inputText(bookForm("price"))
+            <button type="submit">Create Book</button>
+        }
+    </body>
+</html>
