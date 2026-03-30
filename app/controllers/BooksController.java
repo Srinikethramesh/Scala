@@ -45,7 +45,7 @@ public class BooksController extends Controller {
         if(book == null){
             return notFound("Book not found");
         }
-        Form<Book> bookForm = formFactory.form(Book.class).fill(book);
+        Form<Book> bookForm = formFactory.form(Book.class).fill(book);  
         return ok(edit.render(bookForm, messagesApi.preferred(request), request));
     }
 

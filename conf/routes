@@ -23,3 +23,10 @@ POST    /books/create                                   controllers.BooksControl
 GET     /books/delete/:id                               controllers.BooksController.destroy(id:Integer)
 
 GET     /books/:id                                      controllers.BooksController.show(id:Integer)
+
+# Protobuf REST API
+GET     /api/books                                      controllers.BooksApiController.index()
+GET     /api/books/:id                                  controllers.BooksApiController.show(id:Integer)
+POST    /api/books                                      controllers.BooksApiController.save(request: Request)
+DELETE  /api/books/:id                                  controllers.BooksApiController.destroy(id:Integer)
+PUT     /api/books/:id                                  controllers.BooksApiController.update(request: Request, id:Integer)
